@@ -134,3 +134,22 @@ body.photo-viewer-open { overflow:hidden; }
 .booking-field select { appearance:none; padding-right:24px; background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23242823' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center / 18px 18px no-repeat; }
 .booking-field input[type=date]::-webkit-calendar-picker-indicator { width:18px; height:18px; padding:0; cursor:pointer; background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23242823' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='6' width='16' height='14' rx='1'/%3E%3Cpath d='M8 3v6m8-6v6M4 10h16'/%3E%3C/svg%3E") center / 18px 18px no-repeat; }
 @media (max-width:680px) { .hero-photo-zoom { display:none; } }
+
+/* Compact photo controls; the transparent hit area stays easy to tap. */
+.photo-open::after {
+  top:8px; right:8px; width:24px; height:24px;
+  border-color:rgba(255,255,255,.3); border-radius:3px;
+  background-color:rgba(20,30,23,.38); background-size:14px 14px;
+}
+.photo-zoom-inline {
+  top:0; right:0; width:44px; height:44px; border:0;
+  background:transparent; color:rgba(255,253,248,.9);
+}
+.photo-zoom-inline::before {
+  content:''; position:absolute; top:10px; right:10px; width:24px; height:24px;
+  border:1px solid rgba(255,255,255,.3); border-radius:3px;
+  background:rgba(20,30,23,.38); box-sizing:border-box;
+}
+.photo-zoom-inline .ui-icon { position:relative; width:14px; height:14px; }
+.photo-zoom-inline:hover::before, .photo-zoom-inline:focus-visible::before { background:rgba(20,30,23,.7); }
+.photo-zoom-inline:focus-visible { outline:2px solid #fff; outline-offset:-5px; }

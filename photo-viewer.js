@@ -243,7 +243,7 @@
         button.dataset.galleryOpen = key;
         button.dataset.photoIndex = String(index);
         button.setAttribute('aria-label', 'Увеличить фото: ' + photo.alt);
-        button.textContent = section.classList.contains('hero') ? 'Увеличить фото ↗' : '⤢';
+        button.innerHTML = section.classList.contains('hero') ? 'Увеличить фото <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M8 6h10v10"/></svg>' : '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg>';
         (card || section).append(button);
         return;
       }
